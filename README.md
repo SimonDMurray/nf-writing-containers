@@ -12,5 +12,5 @@ A test repository for seeing viability in writing containers used by pipeline to
 * I originally looked at `workflow.onComplete()` however `workflow.onComplete()` cannot see any workflow channels etc which is how I am obtaining container names.
   * However, onComplete() can see params so if you wanted to store containers in params variables then onComplete() could work.
 
-* The `write_container_file()` function assumes the repo name is the last element of a list when splitting by '/', this should always be true but if there is no `/` (i.e. local image) this function still works as expected.
+* The `write_container_file()` function assumes the repo name is the last element of a list when splitting by `/`, this should always be true but if there is no `/` (i.e. local image) this function still works as expected.
   * If there are other `/`s that do not indicate the repository path or the path is delimited by another character then the entire string will be used to name the container, this could be a bug.
